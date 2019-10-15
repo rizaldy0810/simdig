@@ -1,0 +1,21 @@
+H = 100 ;
+g = 9.8 ;
+t = sqrt (2*H/g);
+n=0
+for k=0:t/100:t
+    n=n+1;
+    h(n)=H-(g*k^2/2)
+    v(n)=g*k
+    tt(n)=k;
+    axes (handles.axes1)
+    plot(tt(1:n),v(1:n))
+    grid on
+    axes (handles.axes2)
+    plot (tt(1:n),h(1:n))
+    grid on
+    axes (handles.axes3)
+    plot(2,h(n),'or')
+    grid on
+    axis([0 5 0 H+5])
+    pause (0.1);
+end
