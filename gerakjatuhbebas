@@ -1,4 +1,4 @@
-H = 100 ;
+H = str2num(get(handles.edt1,'string')) ;
 g = 9.8 ;
 t = sqrt (2*H/g);
 n=0
@@ -9,12 +9,17 @@ for k=0:t/100:t
     tt(n)=k;
     axes (handles.axes1)
     plot(tt(1:n),v(1:n))
+    xlabel ('waktu(s)')
+    ylabel ('kecepatan(m/s)')
     grid on
     axes (handles.axes2)
     plot (tt(1:n),h(1:n))
+     xlabel ('waktu(s)')
+    ylabel ('ketinggian(m)')
     grid on
     axes (handles.axes3)
-    plot(2,h(n),'or')
+    plot(2,h(n),'or','linewidth',3)
+     ylabel ('ketinggian(m)')
     grid on
     axis([0 5 0 H+5])
     pause (0.1);
